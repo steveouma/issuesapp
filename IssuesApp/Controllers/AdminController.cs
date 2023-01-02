@@ -25,6 +25,7 @@ namespace IssuesApp.Controllers
         [ProducesResponseType(200, Type = typeof(IEnumerable<Admin>))]
         public IActionResult GetAdmins() 
         {
+            _logger.LogInformation("Received getadmins query ... ");
             var admins = _mapper.Map<List<AdminDto>>(_adminRepository.GetAdmins());
             if (!ModelState.IsValid)
             {
@@ -39,15 +40,15 @@ namespace IssuesApp.Controllers
         [ProducesResponseType(404)]
         public IActionResult GetAdmin(int adminId)
         {
-            _logger.LogInformation("Getting admin {Id}", adminId);
-
             if (!_adminRepository.AdminExists(adminId))
             {
+                _logger.LogInformation("Trying to get non-existent admin {Id}", adminId);
                 return NotFound();
             }
             var admin = _mapper.Map<AdminDto>(_adminRepository.GetAdmin(adminId));
             if(!ModelState.IsValid)
             {
+                _logger.LogError("Bad request received while trying to get non-existent admin {Id}", adminId);
                 return BadRequest(ModelState);
             }
             return Ok(admin);

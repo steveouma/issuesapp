@@ -1,5 +1,6 @@
 *.user
 .vs
+.log
 [Dd]ebug/
 [Rr]elease/
 [Bb]in/

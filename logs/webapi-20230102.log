@@ -1,0 +1,89 @@
+[2023-01-02 11:18:28.310 +01:00  [INF]  Now listening on: https://localhost:7093
+][2023-01-02 11:18:28.366 +01:00  [INF]  Now listening on: http://localhost:5027
+][2023-01-02 11:18:28.374 +01:00  [INF]  Application started. Press Ctrl+C to shut down.
+][2023-01-02 11:18:28.375 +01:00  [INF]  Hosting environment: Development
+][2023-01-02 11:18:28.376 +01:00  [INF]  Content root path: C:\Users\es041204\Documents\tests-steveoyugi\learning\IssuesApp\IssuesApp\
+][2023-01-02 11:18:30.278 +01:00  [INF]  Request starting HTTP/2 GET https://localhost:7093/swagger - -
+][2023-01-02 11:18:30.598 +01:00  [INF]  Request finished HTTP/2 GET https://localhost:7093/swagger - - - 301 0 - 328.9943ms
+][2023-01-02 11:18:30.629 +01:00  [INF]  Request starting HTTP/2 GET https://localhost:7093/swagger/index.html - -
+][2023-01-02 11:18:31.369 +01:00  [INF]  Request finished HTTP/2 GET https://localhost:7093/swagger/index.html - - - 200 - text/html;charset=utf-8 740.6103ms
+][2023-01-02 11:18:31.395 +01:00  [INF]  Request starting HTTP/2 GET https://localhost:7093/swagger/swagger-ui.css - -
+][2023-01-02 11:18:31.458 +01:00  [INF]  Request starting HTTP/2 GET https://localhost:7093/swagger/swagger-ui-standalone-preset.js - -
+][2023-01-02 11:18:31.465 +01:00  [INF]  Request starting HTTP/2 GET https://localhost:7093/swagger/swagger-ui-bundle.js - -
+][2023-01-02 11:18:31.465 +01:00  [INF]  Request starting HTTP/2 GET https://localhost:7093/_framework/aspnetcore-browser-refresh.js - -
+][2023-01-02 11:18:31.466 +01:00  [INF]  Request starting HTTP/2 GET https://localhost:7093/_vs/browserLink - -
+][2023-01-02 11:18:31.471 +01:00  [INF]  Request finished HTTP/2 GET https://localhost:7093/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 5.5717ms
+][2023-01-02 11:18:31.565 +01:00  [INF]  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+][2023-01-02 11:18:31.565 +01:00  [INF]  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+][2023-01-02 11:18:31.565 +01:00  [INF]  Request finished HTTP/2 GET https://localhost:7093/swagger/swagger-ui.css - - - 200 143943 text/css 170.3938ms
+][2023-01-02 11:18:31.565 +01:00  [INF]  Request finished HTTP/2 GET https://localhost:7093/swagger/swagger-ui-standalone-preset.js - - - 200 339486 application/javascript 107.2510ms
+][2023-01-02 11:18:31.628 +01:00  [INF]  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+][2023-01-02 11:18:31.629 +01:00  [INF]  Request finished HTTP/2 GET https://localhost:7093/swagger/swagger-ui-bundle.js - - - 200 1096145 application/javascript 163.8953ms
+][2023-01-02 11:18:31.666 +01:00  [INF]  Request finished HTTP/2 GET https://localhost:7093/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 200.2889ms
+][2023-01-02 11:18:32.267 +01:00  [INF]  Request starting HTTP/2 GET https://localhost:7093/swagger/v1/swagger.json - -
+][2023-01-02 11:18:32.309 +01:00  [INF]  Request starting HTTP/2 GET https://localhost:7093/swagger/favicon-32x32.png - -
+][2023-01-02 11:18:32.309 +01:00  [INF]  Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+][2023-01-02 11:18:32.309 +01:00  [INF]  Request finished HTTP/2 GET https://localhost:7093/swagger/favicon-32x32.png - - - 200 628 image/png 0.8595ms
+][2023-01-02 11:18:32.492 +01:00  [INF]  Request finished HTTP/2 GET https://localhost:7093/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 225.9638ms
+][2023-01-02 11:18:38.133 +01:00  [INF]  Request starting HTTP/2 GET https://localhost:7093/api/Admin - -
+][2023-01-02 11:18:38.148 +01:00  [INF]  Executing endpoint 'IssuesApp.Controllers.AdminController.GetAdmins (IssuesApp)'
+][2023-01-02 11:18:38.182 +01:00  [INF]  Route matched with {action = "GetAdmins", controller = "Admin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAdmins() on controller IssuesApp.Controllers.AdminController (IssuesApp).
+][2023-01-02 11:18:38.685 +01:00  [INF]  Received getadmins query
+][2023-01-02 11:18:41.529 +01:00  [INF]  Executed DbCommand (142ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AdminId], [a].[Email], [a].[FirstName], [a].[LastName]
+FROM [Admins] AS [a]
+ORDER BY [a].[AdminId]
+][2023-01-02 11:18:41.674 +01:00  [INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[IssuesApp.Dto.AdminDto, IssuesApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+][2023-01-02 11:18:41.698 +01:00  [INF]  Executed action IssuesApp.Controllers.AdminController.GetAdmins (IssuesApp) in 3508.2687ms
+][2023-01-02 11:18:41.699 +01:00  [INF]  Executed endpoint 'IssuesApp.Controllers.AdminController.GetAdmins (IssuesApp)'
+][2023-01-02 11:18:41.716 +01:00  [INF]  Request finished HTTP/2 GET https://localhost:7093/api/Admin - - - 200 - application/json;+charset=utf-8 3582.6515ms
+][2023-01-02 11:18:44.442 +01:00  [INF]  Request starting HTTP/2 GET https://localhost:7093/api/Admin - -
+][2023-01-02 11:18:44.445 +01:00  [INF]  Executing endpoint 'IssuesApp.Controllers.AdminController.GetAdmins (IssuesApp)'
+][2023-01-02 11:18:44.445 +01:00  [INF]  Route matched with {action = "GetAdmins", controller = "Admin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAdmins() on controller IssuesApp.Controllers.AdminController (IssuesApp).
+][2023-01-02 11:18:44.447 +01:00  [INF]  Received getadmins query
+][2023-01-02 11:18:44.463 +01:00  [INF]  Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AdminId], [a].[Email], [a].[FirstName], [a].[LastName]
+FROM [Admins] AS [a]
+ORDER BY [a].[AdminId]
+][2023-01-02 11:18:44.464 +01:00  [INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[IssuesApp.Dto.AdminDto, IssuesApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+][2023-01-02 11:18:44.464 +01:00  [INF]  Executed action IssuesApp.Controllers.AdminController.GetAdmins (IssuesApp) in 18.757ms
+][2023-01-02 11:18:44.464 +01:00  [INF]  Executed endpoint 'IssuesApp.Controllers.AdminController.GetAdmins (IssuesApp)'
+][2023-01-02 11:18:44.465 +01:00  [INF]  Request finished HTTP/2 GET https://localhost:7093/api/Admin - - - 200 - application/json;+charset=utf-8 22.6825ms
+][2023-01-02 11:21:12.105 +01:00  [INF]  Now listening on: https://localhost:7093
+][2023-01-02 11:21:12.152 +01:00  [INF]  Now listening on: http://localhost:5027
+][2023-01-02 11:21:12.160 +01:00  [INF]  Application started. Press Ctrl+C to shut down.
+][2023-01-02 11:21:12.161 +01:00  [INF]  Hosting environment: Development
+][2023-01-02 11:21:12.161 +01:00  [INF]  Content root path: C:\Users\es041204\Documents\tests-steveoyugi\learning\IssuesApp\IssuesApp\
+][2023-01-02 11:21:12.752 +01:00  [INF]  Request starting HTTP/2 GET https://localhost:7093/swagger/index.html - -
+][2023-01-02 11:21:13.361 +01:00  [INF]  Request finished HTTP/2 GET https://localhost:7093/swagger/index.html - - - 200 - text/html;charset=utf-8 612.3635ms
+][2023-01-02 11:21:13.406 +01:00  [INF]  Request starting HTTP/2 GET https://localhost:7093/_framework/aspnetcore-browser-refresh.js - -
+][2023-01-02 11:21:13.415 +01:00  [INF]  Request finished HTTP/2 GET https://localhost:7093/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 8.8120ms
+][2023-01-02 11:21:13.424 +01:00  [INF]  Request starting HTTP/2 GET https://localhost:7093/_vs/browserLink - -
+][2023-01-02 11:21:13.476 +01:00  [INF]  Request finished HTTP/2 GET https://localhost:7093/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 52.6666ms
+][2023-01-02 11:21:14.039 +01:00  [INF]  Request starting HTTP/2 GET https://localhost:7093/swagger/v1/swagger.json - -
+][2023-01-02 11:21:14.224 +01:00  [INF]  Request finished HTTP/2 GET https://localhost:7093/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 185.3563ms
+][2023-01-02 11:21:19.875 +01:00  [INF]  Request starting HTTP/2 GET https://localhost:7093/api/Admin - -
+][2023-01-02 11:21:19.886 +01:00  [INF]  Executing endpoint 'IssuesApp.Controllers.AdminController.GetAdmins (IssuesApp)'
+][2023-01-02 11:21:19.906 +01:00  [INF]  Route matched with {action = "GetAdmins", controller = "Admin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAdmins() on controller IssuesApp.Controllers.AdminController (IssuesApp).
+][2023-01-02 11:21:20.249 +01:00  [INF]  Received getadmins query ... 
+][2023-01-02 11:21:22.539 +01:00  [INF]  Executed DbCommand (62ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AdminId], [a].[Email], [a].[FirstName], [a].[LastName]
+FROM [Admins] AS [a]
+ORDER BY [a].[AdminId]
+][2023-01-02 11:21:22.719 +01:00  [INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[IssuesApp.Dto.AdminDto, IssuesApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+][2023-01-02 11:21:22.740 +01:00  [INF]  Executed action IssuesApp.Controllers.AdminController.GetAdmins (IssuesApp) in 2827.9544ms
+][2023-01-02 11:21:22.741 +01:00  [INF]  Executed endpoint 'IssuesApp.Controllers.AdminController.GetAdmins (IssuesApp)'
+][2023-01-02 11:21:22.758 +01:00  [INF]  Request finished HTTP/2 GET https://localhost:7093/api/Admin - - - 200 - application/json;+charset=utf-8 2882.3055ms
+][2023-01-02 11:21:24.796 +01:00  [INF]  Request starting HTTP/2 GET https://localhost:7093/api/Admin - -
+][2023-01-02 11:21:24.798 +01:00  [INF]  Executing endpoint 'IssuesApp.Controllers.AdminController.GetAdmins (IssuesApp)'
+][2023-01-02 11:21:24.799 +01:00  [INF]  Route matched with {action = "GetAdmins", controller = "Admin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAdmins() on controller IssuesApp.Controllers.AdminController (IssuesApp).
+][2023-01-02 11:21:24.800 +01:00  [INF]  Received getadmins query ... 
+][2023-01-02 11:21:24.813 +01:00  [INF]  Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AdminId], [a].[Email], [a].[FirstName], [a].[LastName]
+FROM [Admins] AS [a]
+ORDER BY [a].[AdminId]
+][2023-01-02 11:21:24.814 +01:00  [INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[IssuesApp.Dto.AdminDto, IssuesApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+][2023-01-02 11:21:24.814 +01:00  [INF]  Executed action IssuesApp.Controllers.AdminController.GetAdmins (IssuesApp) in 15.6326ms
+][2023-01-02 11:21:24.815 +01:00  [INF]  Executed endpoint 'IssuesApp.Controllers.AdminController.GetAdmins (IssuesApp)'
+][2023-01-02 11:21:24.815 +01:00  [INF]  Request finished HTTP/2 GET https://localhost:7093/api/Admin - - - 200 - application/json;+charset=utf-8 18.5652ms
+]
