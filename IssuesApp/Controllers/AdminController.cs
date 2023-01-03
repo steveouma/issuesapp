@@ -25,10 +25,10 @@ namespace IssuesApp.Controllers
         [ProducesResponseType(200, Type = typeof(IEnumerable<Admin>))]
         public IActionResult GetAdmins() 
         {
-            _logger.LogInformation("Received getadmins query ... ");
             var admins = _mapper.Map<List<AdminDto>>(_adminRepository.GetAdmins());
             if (!ModelState.IsValid)
             {
+                _logger.LogInformation("Bad request detected");
                 return BadRequest(ModelState);
             }
             return Ok(admins);
@@ -81,6 +81,7 @@ namespace IssuesApp.Controllers
             var adminMap = _mapper.Map<Admin>(adminCreate);
             if (!_adminRepository.CreateAdmin(adminMap))
             {
+                _logger.LogError("Error occured while creating a new admin");
                 ModelState.AddModelError("", "Something went wrong while saving!");
                 return StatusCode(500, ModelState);
             }
@@ -118,6 +119,7 @@ namespace IssuesApp.Controllers
 
             if (!_adminRepository.UpdateAdmin(adminMap))
             {
+                _logger.LogError("Error occured while updating an admin");
                 ModelState.AddModelError("", "Something went wrong while updating the admin");
                 return StatusCode(500, ModelState);
             }
@@ -139,10 +141,13 @@ namespace IssuesApp.Controllers
             var adminToDelete = _adminRepository.GetAdmin(adminId);
 
             if (!ModelState.IsValid)
+            {
                 return BadRequest(ModelState);
+            }
 
             if (!_adminRepository.DeleteAdmin(adminToDelete))
             {
+                _logger.LogError("Error occured while deleting an admin");
                 ModelState.AddModelError("", "Something went wrong deleting admin");
             }
 
