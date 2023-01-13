@@ -3,6 +3,7 @@ using IssuesApp.Dto;
 using IssuesApp.Interfaces;
 using IssuesApp.Models;
 using IssuesApp.Repositories;
+using IssuesApp.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IssuesApp.Controllers
@@ -14,11 +15,13 @@ namespace IssuesApp.Controllers
         private readonly ILogger<AdminController> _logger;
         private readonly IAdminRepository _adminRepository;
         private readonly IMapper _mapper;
-        public AdminController(ILogger<AdminController> logger, IAdminRepository adminRepository, IMapper mapper) 
+        private readonly IMessageProducer _messagePublisher;
+        public AdminController(ILogger<AdminController> logger, IAdminRepository adminRepository, IMapper mapper, IMessageProducer messagePublisher) 
         {
             _logger = logger;
             _adminRepository = adminRepository;
             _mapper = mapper;
+            _messagePublisher = messagePublisher;
         }
 
         [HttpGet]

@@ -3,6 +3,7 @@ using IssuesApp.Dto;
 using IssuesApp.Interfaces;
 using IssuesApp.Models;
 using IssuesApp.Repositories;
+using IssuesApp.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
@@ -16,12 +17,14 @@ namespace IssuesApp.Controllers
         private readonly IAdminRepository _adminRepository;
         private readonly IIssueRepository _issueRepository;
         private readonly IMapper _mapper;
-        public IssueCommentController(IIssueCommentRepository issueCommentRepository, IAdminRepository adminRepository, IIssueRepository issueRepository, IMapper mapper) 
+        private readonly IMessageProducer _messagePublisher;
+        public IssueCommentController(IIssueCommentRepository issueCommentRepository, IAdminRepository adminRepository, IIssueRepository issueRepository, IMapper mapper, IMessageProducer messagePublisher) 
         {
             _issueCommentRepository = issueCommentRepository;
             _adminRepository = adminRepository;
             _issueRepository = issueRepository;
             _mapper = mapper;
+            _messagePublisher = messagePublisher;
         }
 
         [HttpGet]

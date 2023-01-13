@@ -3,6 +3,7 @@ using IssuesApp.Dto;
 using IssuesApp.Interfaces;
 using IssuesApp.Models;
 using IssuesApp.Repositories;
+using IssuesApp.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IssuesApp.Controllers
@@ -13,10 +14,12 @@ namespace IssuesApp.Controllers
     {
         private readonly IIssueRepository _issueRepository;
         private readonly IMapper _mapper;
-        public IssueController(IIssueRepository issueRepository, IMapper mapper)
+        private readonly IMessageProducer _messagePublisher;
+        public IssueController(IIssueRepository issueRepository, IMapper mapper, IMessageProducer messagePublisher)
         {
             _issueRepository = issueRepository;
             _mapper = mapper;
+            _messagePublisher = messagePublisher;
         }
 
         [HttpGet]
@@ -80,6 +83,8 @@ namespace IssuesApp.Controllers
                 ModelState.AddModelError("", "Something went wrong while saving!");
                 return StatusCode(500, ModelState);
             }
+
+            _messagePublisher.SendMessage(issueMap);
 
             return Ok("Successfully added the issue!");
         }

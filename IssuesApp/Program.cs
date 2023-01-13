@@ -2,6 +2,7 @@ using IssuesApp.Data;
 using IssuesApp.Interfaces;
 using IssuesApp.Models;
 using IssuesApp.Repositories;
+using IssuesApp.Services;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Serilog.Sinks.Elasticsearch;
@@ -47,6 +48,7 @@ internal class Program
         builder.Services.AddScoped<IClientUserRepository, ClientUserRepository>();
         builder.Services.AddScoped<IIssueRepository, IssueRepository>();
         builder.Services.AddScoped<IIssueCommentRepository, IssueCommentRepository>();
+        builder.Services.AddScoped<IMessageProducer, RabbitMQProducer>();
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
